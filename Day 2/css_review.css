@@ -1,0 +1,56 @@
+h1 {
+        background-color: lightcyan;
+        padding: 20px;
+        
+        }
+
+h3{
+    font-size: 25px;
+}
+
+.nav_cont {
+    background-color: black;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.nav_cont a {
+    padding: 0 15px;
+}
+
+.intro_cont{
+    background-color: lightgray;
+    padding: 20px;
+    margin-top: 15px;
+
+}
+
+.box1, .box2, .box3{
+    border: 1px inset aquamarine;
+    margin-top: 17px;
+    padding-left: 10px;
+    width: 18%;
+    display: inline-block;
+    margin-right: 70px;
+    margin-left: 10px;
+    
+}
+
+.pseudo {
+    background-color: lightgray;
+    padding: 20px;
+    
+    margin-top: 20px;
+    /* margin-left: 10px; */
+    margin-right: 10px;
+    
+}
+
+.ftr{
+    margin-top: 45px;
+    text-align: center;
+    background-color: lightgray;
+    padding: 10px;
+}
+        

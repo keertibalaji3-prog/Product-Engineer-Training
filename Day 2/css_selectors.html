@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Practice</title>
+    <link rel="stylesheet" href="css_sele.css">
+</head>
+<body>
+    <h1>CSS Selectors Practice</h1>
+    <div class="nav_cont">
+        <nav>
+            <a>Home</a>
+            <a>About</a>
+            <a>Services</a>
+            <a>Contact</a>
+        </nav>
+    </div>
+
+    <div class="uni_sel">
+        <h3>Universal Selector Example </h3>
+        <p>This paragraph is styled using Universal selector (*) which applies to all elements</p>
+    </div>
+
+    <div class="type_sel">
+        <h3>Type Selector Example </h3>
+        <h4>Headings and paragraph</h4>
+        <p>This is an example of paragraph styles by type selector</p>
+    </div>
+
+     <div class="cls_sel">
+        <h3>Class Selector Example </h3>
+        <p>This section is styled using class selector named highlight</p>
+    </div>
+
+    <div id="id_sel">
+        <h3>ID Selector Example </h3>
+        <p>This section is styled using ID selector named unique</p>
+    </div>
+
+    <div id="attr_sel">
+        <h3>Attribute Selector Example </h3>
+        <p>Type your name: </p> 
+        <input type="text" placeholder="Your Name">
+    </div>
+
+    <div id="des_sel">
+        <h3>Descendant Selector Example</h3>
+        <p>This paragraph is inside a div styled by a Descendant Selector (div.p) </p>
+    </div>
+
+    <div id="child_sel">
+        <h3>Child Selector Example</h3>
+        <ul>
+            <li>First child item styled using Child selector (ul > li)</li>
+            <li>Another child item in the list</li>
+        </ul>
+    </div>
+
+    <div id="adj_sel">
+        <h3>Adjacent Sibiling Selector Example</h3>
+        <h2>This is a heading</h2>
+        <p>This paragraph is styled as an Adjacent sibiling to the above heading (h2 + p) </p>
+    </div>
+
+     <div id="gen_sel">
+        <h3>General Selector Example</h3>
+        <h2>Another heading</h2>
+        <p>This paragraph is styled as an general sibiling to the above heading (h2 - p) </p>
+        <p>Another sibiling paragraph styled the same way</p>
+    </div>
+
+    <footer id="ftr">© 2024 CSS Selectors Practice</footer>
+
+</body>
+</html>
