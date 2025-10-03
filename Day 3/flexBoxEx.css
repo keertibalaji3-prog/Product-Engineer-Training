@@ -1,0 +1,49 @@
+h1 {
+    background-color: lavender;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav_cont {
+    display: flex;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav_cont a {
+    padding: 0 15px;
+    
+}
+
+.container1, .container2, .container3 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    
+    
+}
+
+.box1, .box2, .box3, .box4, .box5, .box6{
+    
+    background-color: green;
+    color:white;
+    margin-top: 20px;
+    width: 12%;
+    padding: 20px;
+    text-align: center;
+
+}
+
+footer {
+    margin-top: 30px;
+    background-color: lavender;
+    padding: 20px;
+    text-align: center;
+}
