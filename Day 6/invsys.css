@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer {
+    border: 2px solid rgb(166, 91, 236);
+    padding: 10px;
+    width: 100%;
+    max-width: 450px;
+
+}
+
+.inner {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 15px;
+
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+
+    border: 1px solid lightblue;
+    border-radius: 3px;
+}
+
+.addProd-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: blueviolet;
+    color: white;
+    border: 1px solid blueviolet;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+
+}
+
+th {
+    background-color: rgb(235, 240, 241);
+    padding: 5px;
+    text-align: left;
+
+}
+
+td {
+    padding: 10px;
+    
+}
+th,td,table{
+border: 1px solid #858b91;
+}
+

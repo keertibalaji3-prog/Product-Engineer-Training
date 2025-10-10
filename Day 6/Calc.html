@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="CalcStyle.css">
+</head>
+
+<body>
+   <script src="calc.js"></script>
+
+  <div class="calculator-container">
+    <div class="outer">
+    <h1>Advanced Simple Interest<br>Calculator</h1>
+
+    <div class="input-group">
+      <label>Principal Amount:</label>
+      <input type="number" id="principal" placeholder="Enter principal amount">
+    </div>
+
+    <div class="input-group">
+      <label>Rate of Interest (%):</label>
+      <input type="number" id="rate" placeholder="Enter interest rate">
+    </div>
+
+    <div class="input-group">
+      <label>Time (Years):</label>
+      <input type="number" id="time" placeholder="Enter time in years" step="0.01">
+    </div>
+
+    <button class="calculate-btn" onclick="calculateInterest()">Calculate Interest</button>
+
+    <div class="result-section">
+      <div class="result-label">Interest:</div>
+      <div class="result-value" id="interest"></div>
+      <div class="result-label">Total Amount:</div>
+      <div class="result-value" id="totalAmount"></div>
+      <div class="result-label">Additional Information:</div>
+      <div class="result-value" id="additionalInfo"></div>
+    </div>
+
+    </div>
+  </div>
+</body>
+</html>

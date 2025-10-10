@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory System</title>
+    <link rel="stylesheet" href="invsys.css">
+</head>
+<body>
+    <script src="invsys.js"></script>
+    <div class="outer">
+        <div class="inner">
+            <h1>Inventory System</h1>
+
+            <form>
+                <label>Name: </label> <br>
+                <input type="text" id="product-name" placeholder="Enter product name "> <br>
+                <label>Price: </label> <br>
+                <input type="number" id="price" placeholder="Enter product price "> <br>
+                <label>Quantity: </label> <br>
+                <input type="number" id="quantity" placeholder="Enter product quantity"> 
+            </form>
+            
+            <button class="addProd-btn" onclick="add_product()">Add Product</button>
+
+            <h3>Inventory List</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name </th>
+                        <th>Price </th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="inv-body"></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
