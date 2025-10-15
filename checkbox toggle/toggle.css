@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: lavender;
+}
+
+.toggle-section {
+    background-color: white;
+    padding: 40px 60px;
+    border-radius: 3px;
+    
+}
+
+.toggle-section input[type="checkbox"] {
+  margin-right: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+
+}
+
+h {
+    font-size: 50px;
+}
+
+#good-box, #fast-box, #cheap-box {
+    width: 50px;
+    height: 50px;
+}
+
