@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <!-- Login/Registration Section -->
+        <div id="authSection">
+            <div class="header">
+                <h1> <i class='bxr  bx-calendar-detail'  ></i> Appointment Booking System</h1>
+            </div>
+            <div class="content">
+                <div class="form-row">
+                    <!-- Login Form -->
+                    <div class="card">
+                        <div class="card-header">Login</div>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" id="loginEmail" required placeholder="exampleraj@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" id="loginPassword" required placeholder="Enter your password">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                        </form>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <!-- <small>Demo Admin: admin@demo.com / admin123</small> -->
+                        </div>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <div class="card">
+                        <div class="card-header">Register</div>
+                        <form id="registerForm">
+                            <div id="userAlert"></div>
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" id="regName" required placeholder="Raj Kumar">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" id="regEmail" required placeholder="rajkumar@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="regPhone" required placeholder="9988776655">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" id="regPassword" required placeholder="Create a password">
+                            </div>
+                            <button type="submit" class="btn btn-secondary" style="width: 100%;">Register</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Dashboard -->
+      <div id="userDashboard" class="hidden">
+            <div class="header">
+                <h1><i class='bxr  bx-calendar-event'  ></i> My Appointments</h1>
+                <div class="header-actions">
+                    <div class="user-info">
+                        <div class="user-avatar" id="userAvatar">U</div>
+                        <span id="userName"></span>
+                    </div>
+                    <button class="btn btn-light btn-sm" onclick="showUserProfile()">Profile</button>
+                    <button class="btn btn-light btn-sm" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <div class="content">
+                <div id="userAlert"></div>
+                
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card-header">Quick Actions</div>
+                        <button class="btn btn-primary" onclick="showBookingForm()" style="width: 100%; margin-bottom: 10px;"><i class='bxr  bx-calendar-search'  ></i> Book New Appointment</button>
+                        <button class="btn btn-secondary" onclick="showUpcomingAppointments()" style="width: 100%; margin-bottom: 10px;"> <i class='bxr  bx-binocular'  ></i> View Appointments</button>
+                        <button class="btn btn-warning" onclick="showAppointmentHistory()" style="width: 100%;"> <i class='bxr  bx-history'  ></i> Appointment History</button>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div id="bookingSection" class="hidden">
+                    <div class="card">
+                        <div class="card-header">Book New Appointment</div>
+                        <form id="bookingForm">
+                            <div class="form-group">
+                                <label>Select Service</label>
+                                <select id="serviceSelect" required>
+                                    <option value="">Choose a service...</option>
+                                    <option value="General Health Consultation">General Consultation</option>
+                                    <option value="Dental Checkup">Dental Checkup</option>
+                                    <option value="Hair Treatment">Hair Treatment</option>
+                                    <option value="Physiotherapy">Physiotherapy</option>
+                                    <option value="Skin Treatment">Skin Treatment</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Select Provider</label>
+                                <select id="providerSelect" required>
+                                    <option value="">Choose a provider...</option>
+                                    <option value="Dr. Sarah Johnson">Dr. M. Keerti Balaji</option>
+                                    <option value="Dr. Michael Chen">Dr. R.K. Madeshwaran </option>
+                                    <option value="Emily Williams">Dr. Rahul</option>
+                                    <option value="James Brown">Dr. Priya</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Select Date</label>
+                                <input type="date" id="appointmentDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Select Time</label>
+                                <select id="appointmentTime" required>
+                                    <option value="">Choose a time...</option>
+                                    <option value="09:00 AM">09:00 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="02:00 PM">02:00 PM</option>
+                                    <option value="03:00 PM">03:00 PM</option>
+                                    <option value="04:00 PM">04:00 PM</option>
+                                    <option value="05:00 PM">05:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Additional Notes (Optional)</label>
+                                <textarea id="appointmentNotes" rows="3" placeholder="Any special requirements or notes..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Confirm Booking</button>
+                            <button type="button" class="btn btn-light" onclick="hideBookingForm()">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Upcoming Appointments -->
+                <div id="upcomingSection" class="hidden">
+                    <div class="card">
+                        <div class="card-header">Upcoming Appointments</div>
+                        <div id="upcomingList"></div>
+                    </div>
+                </div>
+
+                <!-- Appointment History -->
+                <div id="historySection" class="hidden">
+                    <div class="card">
+                        <div class="card-header">Appointment History</div>
+                        <div id="historyList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Admin Dashboard -->
+
+        <div id="adminDashboard" class="hidden">
+            <div class="header">
+                <h1> <i class='bxr  bx-spanner'  ></i> Admin Dashboard</h1>
+                <div class="header-actions">
+                    <div class="user-info">
+                        <div class="user-avatar">A</div>
+                        <span id="adminName"></span>
+                    </div>
+                    <button class="btn btn-light btn-sm" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <div class="content">
+                <div id="adminAlert"></div>
+
+                <!-- Statistics -->
+                <div class="dashboard-grid">
+                    <div class="stat-card">
+                        <h3 id="totalAppointments">0</h3>
+                        <p>Total Appointments</p>
+                    </div>
+                    <div class="stat-card" style="background-color: #059669;">
+                        <h3 id="totalUsers">0</h3>
+                        <p>Registered Users</p>
+                    </div>
+                    <div class="stat-card" style="background-color:#d97706 ;">
+                        <h3 id="totalServices">5</h3>
+                        <p>Active Services</p>
+                    </div>
+                </div>
+
+                <!-- Admin Navigation -->
+                <div class="card">
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="showAdminAppointments()"><i class='bxr  bx-calendar-detail'  ></i> Appointments</button>
+                        <button class="btn btn-secondary" onclick="showServiceManagement()"> <i class='bxr  bx-hospital'  ></i> Services</button>
+                        <button class="btn btn-warning" onclick="showUserManagement()"><i class='bxr  bx-user'  ></i>  Users</button>
+                    </div>
+                </div>
+
+                <!-- Appointment Management -->
+                <div id="adminAppointmentsSection">
+                    <div class="card">
+                        <div class="card-header">Appointment Management</div>
+                        <div class="table-container">
+                            <table id="adminAppointmentsTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>User</th>
+                                        <th>Service</th>
+                                        <th>Provider</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminAppointmentsBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Management -->
+                <div id="serviceManagementSection" class="hidden">
+                    <div class="card">
+                        <div class="card-header">Service Management</div>
+                        <button class="btn btn-primary btn-sm" onclick="showAddServiceModal()" style="margin-bottom: 20px;"> <i class='bxr  bx-plus-big'  ></i> Add New Service</button>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Service Name</th>
+                                        <th>Description</th>
+                                        <th>Duration</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="servicesTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Management -->
+                <div id="userManagementSection" class="hidden">
+                    <div class="card">
+                        <div class="card-header">User Management</div>
+                        <button class="btn btn-primary btn-sm" onclick="showAddUserModal()" style="margin-bottom: 20px;"><i class='bxr  bx-plus-big'  ></i> Add New User</button>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    
+    <script src="app.js"></script>
+    
+
+</body>
+</html>
+
