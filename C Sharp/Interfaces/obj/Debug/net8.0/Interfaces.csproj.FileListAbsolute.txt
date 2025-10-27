@@ -1,0 +1,14 @@
+D:\C# tutorial 2\Interfaces\bin\Debug\net8.0\Interfaces.exe
+D:\C# tutorial 2\Interfaces\bin\Debug\net8.0\Interfaces.deps.json
+D:\C# tutorial 2\Interfaces\bin\Debug\net8.0\Interfaces.runtimeconfig.json
+D:\C# tutorial 2\Interfaces\bin\Debug\net8.0\Interfaces.dll
+D:\C# tutorial 2\Interfaces\bin\Debug\net8.0\Interfaces.pdb
+D:\C# tutorial 2\Interfaces\obj\Debug\net8.0\Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# tutorial 2\Interfaces\obj\Debug\net8.0\Interfaces.AssemblyInfoInputs.cache
+D:\C# tutorial 2\Interfaces\obj\Debug\net8.0\Interfaces.AssemblyInfo.cs
+D:\C# tutorial 2\Interfaces\obj\Debug\net8.0\Interfaces.csproj.CoreCompileInputs.cache
+D:\C# tutorial 2\Interfaces\obj\Debug\net8.0\Interfaces.dll
+D:\C# tutorial 2\Interfaces\obj\Debug\net8.0\refint\Interfaces.dll
+D:\C# tutorial 2\Interfaces\obj\Debug\net8.0\Interfaces.pdb
+D:\C# tutorial 2\Interfaces\obj\Debug\net8.0\Interfaces.genruntimeconfig.cache
+D:\C# tutorial 2\Interfaces\obj\Debug\net8.0\ref\Interfaces.dll

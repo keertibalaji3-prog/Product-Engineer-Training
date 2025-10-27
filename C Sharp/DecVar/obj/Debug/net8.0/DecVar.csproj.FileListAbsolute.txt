@@ -1,0 +1,14 @@
+D:\C Sharp\DecVar\bin\Debug\net8.0\DecVar.exe
+D:\C Sharp\DecVar\bin\Debug\net8.0\DecVar.deps.json
+D:\C Sharp\DecVar\bin\Debug\net8.0\DecVar.runtimeconfig.json
+D:\C Sharp\DecVar\bin\Debug\net8.0\DecVar.dll
+D:\C Sharp\DecVar\bin\Debug\net8.0\DecVar.pdb
+D:\C Sharp\DecVar\obj\Debug\net8.0\DecVar.GeneratedMSBuildEditorConfig.editorconfig
+D:\C Sharp\DecVar\obj\Debug\net8.0\DecVar.AssemblyInfoInputs.cache
+D:\C Sharp\DecVar\obj\Debug\net8.0\DecVar.AssemblyInfo.cs
+D:\C Sharp\DecVar\obj\Debug\net8.0\DecVar.csproj.CoreCompileInputs.cache
+D:\C Sharp\DecVar\obj\Debug\net8.0\DecVar.dll
+D:\C Sharp\DecVar\obj\Debug\net8.0\refint\DecVar.dll
+D:\C Sharp\DecVar\obj\Debug\net8.0\DecVar.pdb
+D:\C Sharp\DecVar\obj\Debug\net8.0\DecVar.genruntimeconfig.cache
+D:\C Sharp\DecVar\obj\Debug\net8.0\ref\DecVar.dll

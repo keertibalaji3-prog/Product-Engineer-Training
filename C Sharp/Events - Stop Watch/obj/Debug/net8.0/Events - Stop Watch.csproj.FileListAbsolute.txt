@@ -1,0 +1,14 @@
+D:\C Sharp\Events - Stop Watch\obj\Debug\net8.0\Events - Stop Watch.GeneratedMSBuildEditorConfig.editorconfig
+D:\C Sharp\Events - Stop Watch\obj\Debug\net8.0\Events - Stop Watch.AssemblyInfoInputs.cache
+D:\C Sharp\Events - Stop Watch\obj\Debug\net8.0\Events - Stop Watch.AssemblyInfo.cs
+D:\C Sharp\Events - Stop Watch\obj\Debug\net8.0\Events - Stop Watch.csproj.CoreCompileInputs.cache
+D:\C Sharp\Events - Stop Watch\bin\Debug\net8.0\Events - Stop Watch.exe
+D:\C Sharp\Events - Stop Watch\bin\Debug\net8.0\Events - Stop Watch.deps.json
+D:\C Sharp\Events - Stop Watch\bin\Debug\net8.0\Events - Stop Watch.runtimeconfig.json
+D:\C Sharp\Events - Stop Watch\bin\Debug\net8.0\Events - Stop Watch.dll
+D:\C Sharp\Events - Stop Watch\bin\Debug\net8.0\Events - Stop Watch.pdb
+D:\C Sharp\Events - Stop Watch\obj\Debug\net8.0\Events - Stop Watch.dll
+D:\C Sharp\Events - Stop Watch\obj\Debug\net8.0\refint\Events - Stop Watch.dll
+D:\C Sharp\Events - Stop Watch\obj\Debug\net8.0\Events - Stop Watch.pdb
+D:\C Sharp\Events - Stop Watch\obj\Debug\net8.0\Events - Stop Watch.genruntimeconfig.cache
+D:\C Sharp\Events - Stop Watch\obj\Debug\net8.0\ref\Events - Stop Watch.dll

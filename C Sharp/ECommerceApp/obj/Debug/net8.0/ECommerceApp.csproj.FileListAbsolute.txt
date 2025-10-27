@@ -1,0 +1,14 @@
+D:\C Sharp\ECommerceApp\bin\Debug\net8.0\ECommerceApp.exe
+D:\C Sharp\ECommerceApp\bin\Debug\net8.0\ECommerceApp.deps.json
+D:\C Sharp\ECommerceApp\bin\Debug\net8.0\ECommerceApp.runtimeconfig.json
+D:\C Sharp\ECommerceApp\bin\Debug\net8.0\ECommerceApp.dll
+D:\C Sharp\ECommerceApp\bin\Debug\net8.0\ECommerceApp.pdb
+D:\C Sharp\ECommerceApp\obj\Debug\net8.0\ECommerceApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\C Sharp\ECommerceApp\obj\Debug\net8.0\ECommerceApp.AssemblyInfoInputs.cache
+D:\C Sharp\ECommerceApp\obj\Debug\net8.0\ECommerceApp.AssemblyInfo.cs
+D:\C Sharp\ECommerceApp\obj\Debug\net8.0\ECommerceApp.csproj.CoreCompileInputs.cache
+D:\C Sharp\ECommerceApp\obj\Debug\net8.0\ECommerceApp.dll
+D:\C Sharp\ECommerceApp\obj\Debug\net8.0\refint\ECommerceApp.dll
+D:\C Sharp\ECommerceApp\obj\Debug\net8.0\ECommerceApp.pdb
+D:\C Sharp\ECommerceApp\obj\Debug\net8.0\ECommerceApp.genruntimeconfig.cache
+D:\C Sharp\ECommerceApp\obj\Debug\net8.0\ref\ECommerceApp.dll

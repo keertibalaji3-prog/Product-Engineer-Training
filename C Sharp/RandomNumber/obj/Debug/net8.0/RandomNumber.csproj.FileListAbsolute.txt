@@ -1,0 +1,14 @@
+D:\C Sharp\RandomNumber\bin\Debug\net8.0\RandomNumber.exe
+D:\C Sharp\RandomNumber\bin\Debug\net8.0\RandomNumber.deps.json
+D:\C Sharp\RandomNumber\bin\Debug\net8.0\RandomNumber.runtimeconfig.json
+D:\C Sharp\RandomNumber\bin\Debug\net8.0\RandomNumber.dll
+D:\C Sharp\RandomNumber\bin\Debug\net8.0\RandomNumber.pdb
+D:\C Sharp\RandomNumber\obj\Debug\net8.0\RandomNumber.GeneratedMSBuildEditorConfig.editorconfig
+D:\C Sharp\RandomNumber\obj\Debug\net8.0\RandomNumber.AssemblyInfoInputs.cache
+D:\C Sharp\RandomNumber\obj\Debug\net8.0\RandomNumber.AssemblyInfo.cs
+D:\C Sharp\RandomNumber\obj\Debug\net8.0\RandomNumber.csproj.CoreCompileInputs.cache
+D:\C Sharp\RandomNumber\obj\Debug\net8.0\RandomNumber.dll
+D:\C Sharp\RandomNumber\obj\Debug\net8.0\refint\RandomNumber.dll
+D:\C Sharp\RandomNumber\obj\Debug\net8.0\RandomNumber.pdb
+D:\C Sharp\RandomNumber\obj\Debug\net8.0\RandomNumber.genruntimeconfig.cache
+D:\C Sharp\RandomNumber\obj\Debug\net8.0\ref\RandomNumber.dll

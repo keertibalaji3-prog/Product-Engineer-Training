@@ -1,0 +1,14 @@
+D:\C Sharp\Generics\obj\Debug\net8.0\Generics.GeneratedMSBuildEditorConfig.editorconfig
+D:\C Sharp\Generics\obj\Debug\net8.0\Generics.AssemblyInfoInputs.cache
+D:\C Sharp\Generics\obj\Debug\net8.0\Generics.AssemblyInfo.cs
+D:\C Sharp\Generics\obj\Debug\net8.0\Generics.csproj.CoreCompileInputs.cache
+D:\C Sharp\Generics\bin\Debug\net8.0\Generics.exe
+D:\C Sharp\Generics\bin\Debug\net8.0\Generics.deps.json
+D:\C Sharp\Generics\bin\Debug\net8.0\Generics.runtimeconfig.json
+D:\C Sharp\Generics\bin\Debug\net8.0\Generics.dll
+D:\C Sharp\Generics\bin\Debug\net8.0\Generics.pdb
+D:\C Sharp\Generics\obj\Debug\net8.0\Generics.dll
+D:\C Sharp\Generics\obj\Debug\net8.0\refint\Generics.dll
+D:\C Sharp\Generics\obj\Debug\net8.0\Generics.pdb
+D:\C Sharp\Generics\obj\Debug\net8.0\Generics.genruntimeconfig.cache
+D:\C Sharp\Generics\obj\Debug\net8.0\ref\Generics.dll

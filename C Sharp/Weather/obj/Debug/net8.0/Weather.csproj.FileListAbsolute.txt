@@ -1,0 +1,17 @@
+D:\C Sharp\Weather\obj\Debug\net8.0\Weather.GeneratedMSBuildEditorConfig.editorconfig
+D:\C Sharp\Weather\obj\Debug\net8.0\Weather.AssemblyInfoInputs.cache
+D:\C Sharp\Weather\obj\Debug\net8.0\Weather.AssemblyInfo.cs
+D:\C Sharp\Weather\obj\Debug\net8.0\Weather.csproj.CoreCompileInputs.cache
+D:\C Sharp\Weather\bin\Debug\net8.0\Weather.exe
+D:\C Sharp\Weather\bin\Debug\net8.0\Weather.deps.json
+D:\C Sharp\Weather\bin\Debug\net8.0\Weather.runtimeconfig.json
+D:\C Sharp\Weather\bin\Debug\net8.0\Weather.dll
+D:\C Sharp\Weather\bin\Debug\net8.0\Weather.pdb
+D:\C Sharp\Weather\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\C Sharp\Weather\obj\Debug\net8.0\Weather.csproj.AssemblyReference.cache
+D:\C Sharp\Weather\obj\Debug\net8.0\Weather.csproj.Up2Date
+D:\C Sharp\Weather\obj\Debug\net8.0\Weather.dll
+D:\C Sharp\Weather\obj\Debug\net8.0\refint\Weather.dll
+D:\C Sharp\Weather\obj\Debug\net8.0\Weather.pdb
+D:\C Sharp\Weather\obj\Debug\net8.0\Weather.genruntimeconfig.cache
+D:\C Sharp\Weather\obj\Debug\net8.0\ref\Weather.dll
