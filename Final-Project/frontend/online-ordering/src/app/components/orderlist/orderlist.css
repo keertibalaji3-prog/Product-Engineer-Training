@@ -1,0 +1,106 @@
+
+.action-dropdown {
+  position: relative;
+}
+
+.action-dropdown-content {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 150px;
+  z-index: 100;
+  overflow: hidden;
+  animation: slideDown 0.2s ease;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.action-dropdown-content button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  color: #1d1d1f;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-dropdown-content button:hover {
+  background: #f5f5f7;
+}
+
+.action-dropdown-content button.delete-action {
+  color: #dc2626;
+}
+
+.action-dropdown-content button.delete-action:hover {
+  background: #fee;
+}
+
+.action-dropdown-content i {
+  font-size: 18px;
+}
+
+
+.filter-dropdown {
+  position: relative;
+}
+
+.filter-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  z-index: 100;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.filter-dropdown:hover .dropdown-content {
+  display: block;
+  animation: slideDown 0.2s ease;
+}
+
+.filter-dropdown .dropdown-content button {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  color: #1d1d1f;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-dropdown .dropdown-content button:hover {
+  background: #f5f5f7;
+}
+
+.filter-dropdown .dropdown-content button.active {
+  background: #5b7cff;
+  color: white;
+}

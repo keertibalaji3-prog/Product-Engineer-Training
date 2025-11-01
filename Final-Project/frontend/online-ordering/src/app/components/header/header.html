@@ -1,0 +1,67 @@
+
+<div class="header">
+  <div>
+    <div class="breadcrumb">{{ breadcrumb }}</div>
+    <h1 class="page-title">{{ title }}</h1>
+  </div>
+
+  <div class="header-actions">
+    <div class="shop-selector">
+      <span>Keerti shop</span>
+      <i class='bx bx-chevron-down'></i>
+    </div>
+
+    <div class="user-icons">
+      <div class="icon-btn">
+        <i class='bx bx-bell bell-icon'></i>
+      </div>
+
+      <div class="profile-dropdown">
+        <div class="avatar" (click)="toggleProfileDropdown($event)">
+          <img 
+            src="https://images.pexels.com/photos/2341350/pexels-photo-2341350.jpeg"
+            alt="avatar"
+            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;"
+            class="avatar">
+        </div>
+
+        @if (showProfileDropdown) {
+          <div class="profile-dropdown-content">
+            <div class="profile-info">
+              <div class="profile-avatar">
+                <img 
+                  src="https://images.pexels.com/photos/2341350/pexels-photo-2341350.jpeg"
+                  alt="avatar"
+                  style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;"
+                  class="avatar">
+              </div>
+              <div>
+                <div class="profile-name">Admin</div>
+                <div class="profile-email">{{ userEmail }}</div>
+              </div>
+            </div>
+
+            <hr>
+
+            <button class="dropdown-menu-item" (click)="$event.stopPropagation()">
+              <i class='bx bx-user'></i>
+              <span>Profile</span>
+            </button>
+
+            <button class="dropdown-menu-item" (click)="$event.stopPropagation()">
+              <i class='bx bx-cog'></i>
+              <span>Settings</span>
+            </button>
+
+            <hr>
+
+            <button class="dropdown-menu-item logout-action" (click)="logout()">
+              <i class='bx bx-log-out'></i>
+              <span>Logout</span>
+            </button>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+
+@if (isOpen) {
+  <div class="modal-overlay" (click)="close()">
+    <div class="modal-container" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>{{ isEditMode ? 'Edit Order' : 'Add New Order' }}</h2>
+        <button class="close-btn" (click)="close()">
+          <i class='bx bx-x'></i>
+        </button>
+      </div>
+
+      <form (ngSubmit)="onSubmit()" #orderForm="ngForm">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="customerName">Customer Name *</label>
+              <input 
+                type="text" 
+                id="customerName"
+                [(ngModel)]="formData.customerName"
+                name="customerName"
+                required
+                placeholder="Enter customer name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input 
+                type="email" 
+                id="email"
+                [(ngModel)]="formData.email"
+                name="email"
+                placeholder="balaji@email.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input 
+                type="tel" 
+                id="phone"
+                [(ngModel)]="formData.phone"
+                name="phone"
+                placeholder="6354759821">
+            </div>
+
+            <div class="form-group">
+              <label for="productName">Product Name *</label>
+              <input 
+                type="text" 
+                id="productName"
+                [(ngModel)]="formData.productName"
+                name="productName"
+                required
+                placeholder="Enter product name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="quantity">Quantity *</label>
+              <input 
+                type="number" 
+                id="quantity"
+                [(ngModel)]="formData.quantity"
+                name="quantity"
+                required
+                min="1"
+                (input)="calculateTotal()">
+            </div>
+
+            <div class="form-group">
+              <label for="price">Price *</label>
+              <input 
+                type="number" 
+                id="price"
+                [(ngModel)]="formData.price"
+                name="price"
+                required
+                min="0"
+                step="0.01"
+                (input)="calculateTotal()">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input 
+                type="text" 
+                id="location"
+                [(ngModel)]="formData.location"
+                name="location"
+                placeholder="City, State">
+            </div>
+
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select 
+                id="status"
+                [(ngModel)]="formData.status"
+                name="status"
+                required>
+                <option value="Pending">Pending</option>
+                <option value="In Process">In Process</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="trackingID">Tracking ID</label>
+              <input 
+                type="text" 
+                id="trackingID"
+                [(ngModel)]="formData.trackingID"
+                name="trackingID"
+                readonly>
+            </div>
+
+            <div class="form-group">
+              <label>Total Amount</label>
+              <input 
+                type="text" 
+                [value]="'$' + formData.totalAmount.toFixed(2)"
+                readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-cancel" (click)="close()">Cancel</button>
+          <button type="submit" class="btn-submit" [disabled]="!orderForm.form.valid">
+            {{ isEditMode ? 'Update Order' : 'Add Order' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+}
+

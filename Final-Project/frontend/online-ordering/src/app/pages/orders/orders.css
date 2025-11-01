@@ -1,0 +1,110 @@
+.orders-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+.header h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+.refresh-btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.refresh-btn:hover {
+  background-color: #0056b3;
+}
+
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.order-id {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-completed {
+  background-color: #e6f4ea;
+  color: #2e7d32;
+}
+.status-completed .status-dot {
+  background-color: #2e7d32;
+}
+
+.status-pending {
+  background-color: #fff4e5;
+  color: #ff9800;
+}
+.status-pending .status-dot {
+  background-color: #ff9800;
+}
+
+.status-process {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+.status-process .status-dot {
+  background-color: #1565c0;
+}
+
+.more-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: #555;
+}
+
+.loading,
+.error,
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+.error {
+  color: #d9534f;
+}
+
+.main-content {
+  margin-left: 10%;
+}

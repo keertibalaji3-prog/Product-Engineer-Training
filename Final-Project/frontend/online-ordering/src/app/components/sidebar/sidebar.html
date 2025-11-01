@@ -1,0 +1,25 @@
+
+
+
+<div class="sidebar">
+  <div class="logo">
+    <div class="logo-icon"><i class="bx bx-gem"></i></div>
+    <span>Investo</span>
+  </div>
+
+  <ul class="nav-menu">
+    @for (item of menuItems; track item) {
+      <li 
+        class="nav-item"
+        [class.active]="item.active"
+        [routerLink]="item.route">
+        <div class="nav-icon-item">
+          <i [class]="item.icon"></i>
+        </div>
+        <span>{{ item.label }}</span>
+      </li>
+    }
+  </ul>
+</div>
+
+

@@ -1,0 +1,162 @@
+
+ <div class="order-section" (click)="closeDropdown()">
+  <div class="section-header">
+    <h2 class="section-title">Order Items</h2>
+    <button class="add-btn" (click)="openAddModal()">
+      <i class='bx bx-plus'></i>
+      <span>Add Product</span>
+    </button>
+  </div>
+
+  <div class="controls">
+    <div class="search-box">
+      <i class='bx bx-search search-icon'></i>
+      <input 
+        type="text" 
+        placeholder="Search by customer, tracking ID, product..." 
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()">
+    </div>
+
+    <div class="action-buttons">
+    
+      <div class="filter-dropdown">
+        <button class="filter-btn">
+          <i class='bx bx-filter'></i>
+          <span>Filter</span>
+        </button>
+        <div class="dropdown-content">
+          <button 
+            [class.active]="selectedStatus === 'all'"
+            (click)="selectedStatus = 'all'; applyFilters()">
+            All Status
+          </button>
+          <button 
+            [class.active]="selectedStatus === 'Pending'"
+            (click)="selectedStatus = 'Pending'; applyFilters()">
+            Pending
+          </button>
+          <button 
+            [class.active]="selectedStatus === 'In Process'"
+            (click)="selectedStatus = 'In Process'; applyFilters()">
+            In Process
+          </button>
+          <button 
+            [class.active]="selectedStatus === 'Completed'"
+            (click)="selectedStatus = 'Completed'; applyFilters()">
+            Completed
+          </button>
+        </div>
+      </div>
+
+  
+      <div class="filter-dropdown">
+        <button class="date-btn">
+          <i class='bx bx-calendar'></i>
+          <span>Date</span>
+        </button>
+        <div class="dropdown-content">
+          <button 
+            [class.active]="dateFilter === 'all'"
+            (click)="dateFilter = 'all'; applyFilters()">
+            All Time
+          </button>
+          <button 
+            [class.active]="dateFilter === 'today'"
+            (click)="dateFilter = 'today'; applyFilters()">
+            Today
+          </button>
+          <button 
+            [class.active]="dateFilter === 'week'"
+            (click)="dateFilter = 'week'; applyFilters()">
+            Last 7 Days
+          </button>
+          <button 
+            [class.active]="dateFilter === 'month'"
+            (click)="dateFilter = 'month'; applyFilters()">
+            Last 30 Days
+          </button>
+        </div>
+      </div>
+
+      <button class="export-btn">
+        <i class='bx bx-download'></i>
+        <span>Export</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th><input type="checkbox" class="checkbox"></th>
+          <th>Order</th>
+          <th>Customers</th>
+          <th>Tracking ID</th>
+          <th>Order Date</th>
+          <th>Quantity</th>
+          <th>Location</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (order of filteredOrders; track order.orderID) {
+          <tr>
+            <td>
+              <input 
+                type="checkbox" 
+                class="checkbox"
+                [checked]="selectedOrders.has(order.orderID)"
+                (change)="toggleOrderSelection(order.orderID)">
+            </td>
+            <td class="order-id">#{{ order.orderID }}</td>
+            <td>{{ order.customerName }}</td>
+            <td>{{ order.trackingID }}</td>
+            <td>{{ formatDate(order.orderDate) }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.location }}</td>
+            <td>${{ order.totalAmount.toFixed(2) }}</td>
+            <td>
+              <span class="status-badge" [ngClass]="getStatusClass(order.status)">
+                <span class="status-dot"></span>
+                {{ order.status }}
+              </span>
+            </td>
+            <td>
+              <div class="action-dropdown">
+                <button class="more-btn" (click)="toggleDropdown(order.orderID, $event)">
+                  <i class='bx bx-dots-vertical-rounded'></i>
+                </button>
+
+                @if (openDropdownId === order.orderID) {
+                  <div class="action-dropdown-content">
+                    <button class="dropdown-item" (click)="openEditModal(order, $event)">
+                      <i class='bx bx-edit'></i>
+                      <span>Edit</span>
+                    </button>
+                    <button class="dropdown-item delete-action" (click)="deleteOrder(order.orderID, $event)">
+                      <i class='bx bx-trash'></i>
+                      <span>Delete</span>
+                    </button>
+                  </div>
+                }
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<app-order-form-modal
+  [isOpen]="isModalOpen"
+  [order]="selectedOrder"
+  [isEditMode]="isEditMode"
+  (closeModal)="closeModal()"
+  (saveOrder)="saveOrder($event)">
+</app-order-form-modal>
