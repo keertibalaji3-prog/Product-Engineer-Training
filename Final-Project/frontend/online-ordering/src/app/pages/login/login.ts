@@ -3,6 +3,8 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth';
+
 
 @Component({
   selector: 'app-login',
@@ -13,22 +15,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   private router = inject(Router);
+  private authService = inject(AuthService);
   
   credentials = {
     email: '',
     password: ''
   };
 
-  onSubmit() {
-    
-    if (this.credentials.email && this.credentials.password) {
-     
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('userEmail', this.credentials.email);
-      
-      this.router.navigate(['/orders']);
+ onSubmit() {
+    const username = this.credentials.email;
+    const password = this.credentials.password;
+
+    if (this.authService.login(username, password)) {   
+      this.router.navigate(['/orders']);               
     } else {
-      alert('Please enter email and password');
+      alert('Invalid username or password');
     }
   }
-}
+} 
+

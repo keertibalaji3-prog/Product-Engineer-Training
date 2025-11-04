@@ -38,7 +38,8 @@ export class OrderService {
       map(orders => ({
         totalOrders: orders.length,
         completedOrders: orders.filter(o => o.status === 'Completed').length,
-        inProcessOrders: orders.filter(o => o.status === 'In Process').length
+        inProcessOrders: orders.filter(o => o.status === 'In Process').length,
+        pendingOrders: orders.filter(o => o.status === 'Pending').length
       }))
     );
   }

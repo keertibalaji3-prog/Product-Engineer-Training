@@ -1,5 +1,14 @@
 <div class="container">
-  <app-sidebar></app-sidebar>
+  <div 
+    class="sidebar-overlay" 
+    [class.active]="isMobileMenuOpen"
+    (click)="closeMobileMenu()">
+  </div>
+
+
+  <div [class.active]="isMobileMenuOpen">
+    <app-sidebar></app-sidebar>
+  </div>
   
   <main class="main-content">
     <app-header 
@@ -7,6 +16,155 @@
       breadcrumb="Home / Dashboard">
     </app-header>
 
-   
-  </main>
+    <div class="filter-section">
+      <div class="filter-label">Showing data for:</div>
+      <div class="filter-dropdown">
+        <button class="filter-btn-main" (click)="showFilterDropdown = !showFilterDropdown">
+          <i class='bx bx-calendar'></i>
+          <span>{{ getFilterLabel() }}</span>
+          <i class='bx bx-chevron-down'></i>
+        </button>
+        <div class="dropdown-content" *ngIf="showFilterDropdown">
+          <button 
+            [class.active]="selectedFilter === 'all'"
+            (click)="selectFilter('all')">
+            All Time
+          </button>
+          <button 
+            [class.active]="selectedFilter === 'today'"
+            (click)="selectFilter('today')">
+            Today
+          </button>
+          <button 
+            [class.active]="selectedFilter === 'week'"
+            (click)="selectFilter('week')">
+            Last 7 Days
+          </button>
+          <button 
+            [class.active]="selectedFilter === 'month'"
+            (click)="selectFilter('month')">
+            Last 30 Days
+          </button>
+        </div>
+      </div>
+    </div>
+
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-icon" >
+      <i class='bx bx-shopping-bag'></i>
+    </div>
+    <div class="stat-details">
+      <div class="stat-label" style="color: #3d60ec;">Total Orders</div>
+      <div class="stat-value">{{ stats.totalOrders }}</div>
+      <div class="stat-change">{{ getFilterLabel() }}</div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-icon">
+      <i class='bx bx-check-circle'></i>
+    </div>
+    <div class="stat-details">
+      <div class="stat-label" style="color: #3d60ec;">Completed Orders</div>
+      <div class="stat-value">{{ stats.completedOrders }}</div>
+      <div class="stat-change">{{ getFilterLabel() }}</div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-icon">
+      <i class='bx bx-time'></i>
+    </div>
+    <div class="stat-details">
+      <div class="stat-label" style="color: #f59e0b;">In Process Orders</div>
+      <div class="stat-value">{{ stats.inProcessOrders }}</div>
+      <div class="stat-change">{{ getFilterLabel() }}</div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-icon">
+      <i class='bx bx-hourglass'></i>
+    </div>
+    <div class="stat-details">
+      <div class="stat-label" style="color: #f59e0b;">Pending Orders</div>
+      <div class="stat-value">{{ stats.pendingOrders }}</div>
+      <div class="stat-change">{{ getFilterLabel() }}</div>
+    </div>
+  </div>
+
+  <div class="stat-card stat-card-wide">
+    <div class="stat-icon">
+      <i class='bx bx-dollar-circle'></i>
+    </div>
+    <div class="stat-details">
+      <div class="stat-label" style="color: #c2185b;">Total Revenue</div>
+      <div class="stat-value">${{ stats.CtotalRevenue.toFixed(2) }}</div>
+      <div class="stat-change">{{ getFilterLabel() }}</div>
+    </div>
+  </div>
+
+  <div class="stat-card stat-card-wide">
+    <div class="stat-icon">
+      <i class='bx bx-line-chart' style="font-weight: 1000"></i>
+    </div>
+    <div class="stat-details">
+      <div class="stat-label" style="color: #8a0a3d;">Average Order Value</div>
+      <div class="stat-value">${{ stats.averageOrderValue.toFixed(2) }}</div>
+      <div class="stat-change">{{ getFilterLabel() }}</div>
+    </div>
+  </div>
 </div>
+
+
+<div class="content-section">
+  <div class="section-header">
+    <h2 class="section-title">Recent Orders</h2>
+    <a routerLink="/orders" class="view-all-link" (click)="closeMobileMenu()">View All</a>
+  </div>
+  
+
+  <div class="loading-state" *ngIf="isLoading">
+    <div class="loader"></div>
+    <p>Loading orders...</p>
+  </div>
+
+  <div class="empty-state" *ngIf="!isLoading && recentOrders.length === 0">
+    <i class='bx bx-shopping-bag'></i>
+    <p>No orders found for the selected period.</p>
+  </div>
+
+
+  <div class="table-container" *ngIf="!isLoading && recentOrders.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer</th>
+          <th>Product</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of recentOrders">
+          <td class="order-id">#{{ order.orderID }}</td>
+          <td>{{ order.customerName }}</td>
+          <td>{{ order.productName }}</td>
+          <td class="amount">${{ order.totalAmount.toFixed(2) }}</td>
+          <td>
+            <span class="status-badge" [ngClass]="getStatusClass(order.status)">
+              <span class="status-dot"></span>
+              {{ order.status }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</main>
+</div>
+

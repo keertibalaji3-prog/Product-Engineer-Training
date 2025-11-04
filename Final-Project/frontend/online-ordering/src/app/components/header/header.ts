@@ -1,5 +1,4 @@
 
-
 import { Component, Input, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -45,3 +44,4 @@ export class HeaderComponent {
     this.showProfileDropdown = false;
   }
 }
+

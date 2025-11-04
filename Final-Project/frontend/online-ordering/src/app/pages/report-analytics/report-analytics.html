@@ -1,5 +1,16 @@
 <div class="container">
-  <app-sidebar></app-sidebar>
+  
+  <!-- Sidebar Overlay -->
+  <div 
+    class="sidebar-overlay" 
+    [class.active]="isMobileMenuOpen"
+    (click)="closeMobileMenu()">
+  </div>
+
+  <!-- Sidebar -->
+  <div [class.active]="isMobileMenuOpen">
+    <app-sidebar></app-sidebar>
+  </div>
   
   <main class="main-content">
     <app-header 
@@ -7,6 +18,131 @@
       breadcrumb="Home / Analytics">
     </app-header>
 
-    
+    <div class="loading-state" *ngIf="isLoading">
+      <div class="loader"></div>
+      <p>Loading analytics...</p>
+    </div>
+
+    <div *ngIf="!isLoading">
+      <!-- Summary Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #5b7cff;">
+            <i class='bx bx-shopping-bag'></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-label">Total Orders</div>
+            <div class="stat-value">{{ totalOrders }}</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #10b981;">
+            <i class='bx bx-dollar-circle'></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-label">Total Revenue</div>
+            <div class="stat-value">${{ totalRevenue.toFixed(2) }}</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #f59e0b;">
+            <i class='bx bx-line-chart'></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-label">Avg Order Value</div>
+            <div class="stat-value">${{ averageOrderValue.toFixed(2) }}</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #8b5cf6;">
+            <i class='bx bx-user'></i>
+          </div>
+          <div class="stat-details">
+            <div class="stat-label">Total Customers</div>
+            <div class="stat-value">{{ totalCustomers }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Order Status Distribution</h3>
+          </div>
+          <div class="chart-content">
+            <div class="pie-chart">
+              <div class="pie-chart-legend">
+                <div class="legend-item" *ngFor="let item of statusData">
+                  <div class="legend-color" [style.background]="item.color"></div>
+                  <div class="legend-details">
+                    <div class="legend-label">{{ item.label }}</div>
+                    <div class="legend-value">{{ item.value }} ({{ item.percentage.toFixed(1) }}%)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="pie-chart-visual">
+                <div class="pie-chart-circle">
+                  <div class="pie-slice" *ngFor="let item of statusData; let i = index"
+                       [style.background]="item.color"
+                       [style.width.%]="item.percentage">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>            
+
+        
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Top Products by Revenue</h3>
+          </div>
+          <div class="chart-content">
+            <div class="horizontal-bars">
+              <div class="h-bar-item" *ngFor="let product of topProducts">
+                <div class="h-bar-label">{{ product.name }}</div>
+                <div class="h-bar-container">
+                  <div class="h-bar-fill" 
+                       [style.width.%]="product.percentage"
+                       [title]="'$' + product.revenue.toFixed(2)">
+                  </div>
+                </div>
+                <div class="h-bar-value">${{ product.revenue.toFixed(2) }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Locations -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Top Locations</h3>
+          </div>
+          <div class="chart-content">
+            <div class="location-list">
+              <div class="location-item" *ngFor="let location of topLocations; let i = index">
+                <div class="location-rank">{{ i + 1 }}</div>
+                <div class="location-details">
+                  <div class="location-name">{{ location.location }}</div>
+                  <div class="location-progress">
+                    <div class="progress-bar">
+                      <div class="progress-fill" [style.width.%]="location.percentage"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="location-stats">
+                  <div class="location-orders">{{ location.orders }} orders</div>
+                  <div class="location-percentage">{{ location.percentage.toFixed(1) }}%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </div>

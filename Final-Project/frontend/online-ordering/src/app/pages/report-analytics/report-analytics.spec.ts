@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReportAnalytics } from './report-analytics';
+import { AnalyticsComponent } from './report-analytics';
 
 describe('ReportAnalytics', () => {
-  let component: ReportAnalytics;
-  let fixture: ComponentFixture<ReportAnalytics>;
+  let component: AnalyticsComponent;
+  let fixture: ComponentFixture<AnalyticsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReportAnalytics]
+      imports: [AnalyticsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ReportAnalytics);
+    fixture = TestBed.createComponent(AnalyticsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,3 +21,4 @@ describe('ReportAnalytics', () => {
     expect(component).toBeTruthy();
   });
 });
+
